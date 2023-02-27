@@ -1,0 +1,285 @@
+{% load static %}
+<html>
+<head>
+      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <style>
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+.dropdown-menu li {
+position: relative;
+}
+.dropdown-item{
+cursor:pointer;
+}
+
+.dropdown-menu .dropdown-submenu {
+display: none;
+position: absolute;
+left: 50%;
+top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+right: 100%;
+left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+display: block;
+cursor:pointer;
+}
+  </style>
+</head>
+<body>
+{% include 'messages.html' %}
+<form action="student" method="post">
+  {% csrf_token %}
+<section class="h-100 bg-dark">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Student registration form</h3>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text" id="form3Example1m" class="form-control form-control-lg" name="name"/>
+                      <label class="form-label" for="form3Example1m">Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="date" id="form3Example1n" class="form-control form-control-lg" name="date" />
+                      <label class="form-label" for="form3Example1n">DOB</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="Number" id="form3Example1m1" class="form-control form-control-lg" name="age"/>
+                      <label class="form-label" for="form3Example1m1">Age</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="email" id="form3Example1n1" class="form-control form-control-lg" name="mailid"/>
+                      <label class="form-label" for="form3Example1n1">Mail id</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example8" class="form-control form-control-lg" name="address" />
+                  <label class="form-label" for="form3Example8">Address</label>
+                </div>
+
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                  <h6 class="mb-0 me-4">Gender: </h6>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                      value="Female">
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                      value="Male">
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline mb-0">
+<!--                    <input class="form-check-input" type="radio" name="gender" id="otherGender"-->
+<!--                      value="option3" />-->
+<!--                    <label class="form-check-label" for="otherGender">Other</label>-->
+                  </div>
+
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example97" class="form-control form-control-lg" name="number" />
+                  <label class="form-label" for="form3Example97">Phone Number</label>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label><h6>Department</h6></label><br>
+                    <select class="select" name="department">
+                      <option name="department" value="Undergraduate">Undergraduate </option>
+                      <option name="department" value="Post Graduate">Post Graduate</option>
+                    </select>
+                    </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="dropdown" name="courses">
+                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false" name="courses">
+                                  Course
+                         </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" name="courses">
+    <li><a class="dropdown-item" name="courses">Computer Science &raquo;</a>
+    <ul class="dropdown-menu dropdown-submenu">
+        <li>
+          <select class="select" name="courses">
+          <option name="courses" class="dropdown-item"> B.Sc CS</option>
+          <option name="courses" class="dropdown-item" >M.Sc CS specialized with AI</option>
+          <option name="courses" class="dropdown-item" >M.Sc CS specialized with Data Analytics</option>
+          <option name="courses" class="dropdown-item" >BCA</option>
+          <option name="courses" class="dropdown-item" >MCA</option>
+          <option name="courses" class="dropdown-item" >B.Sc Information Technology</option>
+          </select>
+        </li>
+    </ul>
+    </li>
+    <li>
+      <a class="dropdown-item" name="courses">Mathematics &raquo;</a>
+      <ul class="dropdown-menu dropdown-submenu">
+        <li>
+          <select class="select" name="courses">
+          <option name="courses" class="dropdown-item">B.A Mathematics</option>
+          <option name="courses" class="dropdown-item">B.Sc Mathematics</option>
+          <option name="courses" class="dropdown-item">M.Sc Applied Mathematics & Informatics</option>
+          <option name="courses" class="dropdown-item" >M.Sc Mathematics & Computing</option>
+          <option name="courses" class="dropdown-item" >B.Sc Mathematics(Computer Application)</option>
+          </select>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a  class="dropdown-item" name="courses">Chemistry &raquo;</a>
+      <ul class="dropdown-menu dropdown-submenu">
+        <li>
+          <select class="select" name="courses">
+          <option name="courses" class="dropdown-item" >B.Sc Chemistry</option>
+          <option name="courses" class="dropdown-item" >M.Sc Drug Chemistry</option>
+          <option name="courses" class="dropdown-item" >M.Sc Analytical Chemistry</option>
+          <option name="courses" class="dropdown-item" >M.Sc Chemistry</option>
+          <option name="courses" class="dropdown-item" >M.Sc Chemistry(Hons)</option>
+          </select>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="dropdown-item" name="courses">Physics &raquo;</a>
+      <ul class="dropdown-menu dropdown-submenu">
+        <li>
+          <select class="select" name="courses">
+          <option name="courses" class="dropdown-item" >B.Sc Physics</option>
+          <option name="courses" class="dropdown-item" >B.Sc Applied Physics</option>
+          <option name="courses" class="dropdown-item" >M.Sc Biophysics</option>
+          <option name="courses" class="dropdown-item" >M.Sc Physics</option>
+          <option name="courses" class="dropdown-item" >M.Sc Geophysics</option>
+          </select>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="dropdown-item" name="courses">Commerce &raquo;</a>
+      <ul class="dropdown-menu dropdown-submenu">
+        <li>
+          <select class="select" name="courses">
+          <option name="courses" class="dropdown-item" >BCom</option>
+          <option name="courses" class="dropdown-item" >BCom Finance & Accountancy</option>
+          <option name="courses" class="dropdown-item" >BBA</option>
+          <option name="courses" class="dropdown-item" >MCom </option>
+          <option name="courses" class="dropdown-item" >MBA</option>
+          </select>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="dropdown-item" name="courses">Biology &raquo;</a>
+      <ul class="dropdown-menu dropdown-submenu">
+        <li>
+          <select class="select" name="courses">
+          <option name="courses" class="dropdown-item" >B.Sc Biology</option>
+          <option name="courses" class="dropdown-item" >B.Sc Biotechnology</option>
+          <option name="courses" class="dropdown-item" >M.Sc Applied Biology</option>
+          <option name="courses" class="dropdown-item" >M.Sc Environmental Science</option>
+          <option name="courses" class="dropdown-item" >M.Sc Microbiology</option>
+          </select>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+      </div>          <br>
+                <div class="form-outline mb-4">
+                 <label><h6>Purpose</h6></label><br>
+                    <select class="select" name="purpose">
+                      <option name="purpose" value="Enquiry">Enquiry</option>
+                      <option name="purpose" value="Place Order">Place Order</option>
+                      <option name="purpose"  value="Return">Return</option>
+                      <option name="purpose" value="Complaint">Complaint</option>
+                    </select>
+                </div>
+
+<!--                              <div class="form-outline mb-4">-->
+                  <!-- Default checkbox -->
+                  <label><h6>Material Provided:</h6></label><br>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="materials" id="flexCheckDefault" value="Pen and Pencil"/>
+  <label class="form-check-label" for="flexCheckDefault">Pen and Pencil</label>
+</div>
+
+<!-- Checked checkbox -->
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="materials" id="flexCheckDefault1" value="Note Book"/>
+  <label class="form-check-label" for="flexCheckDefault">Note Book</label>
+</div>
+
+                <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="materials" id="flexCheckDefault2" value="Text Book" />
+  <label class="form-check-label" for="flexCheckDefault">Text Book</label>
+</div>
+                <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="materials" id="flexCheckDefault3" value="Previous Question Paper"/>
+  <label class="form-check-label" for="flexCheckDefault">Previous Question Paper</label>
+</div>
+                 <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="materials" id="flexCheckDefault4" value="Exam Sheets"/>
+  <label class="form-check-label" for="flexCheckDefault">Exam Sheets</label>
+</div>
+
+
+
+                <div class="form-outline mb-4">
+<!--                  <input type="text" id="form3Example97" class="form-control form-control-lg" />-->
+<!--                  <label class="form-label" for="form3Example97">Email ID</label>-->
+                </div>
+
+                <div class="d-flex justify-content-end pt-3">
+<!--                  <button type="button" class="btn btn-light btn-lg">Reset all</button>-->
+                  <input type="Submit" value="Submit" class="btn btn-warning btn-lg ms-2"></input>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</form>
+</body>
+</html>
