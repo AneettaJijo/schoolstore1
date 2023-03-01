@@ -58,13 +58,13 @@ cursor:pointer;
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1m" class="form-control form-control-lg" name="name"/>
+                      <input type="text" id="form3Example1m" class="form-control form-control-lg" name="name" required/>
                       <label class="form-label" for="form3Example1m">Name</label>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="date" id="form3Example1n" class="form-control form-control-lg" name="date" />
+                      <input type="date" id="form3Example1n" class="form-control form-control-lg" name="date" required />
                       <label class="form-label" for="form3Example1n">DOB</label>
                     </div>
                   </div>
@@ -73,20 +73,20 @@ cursor:pointer;
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="Number" id="form3Example1m1" class="form-control form-control-lg" name="age"/>
+                      <input type="Number" id="form3Example1m1" class="form-control form-control-lg" name="age" required/>
                       <label class="form-label" for="form3Example1m1">Age</label>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="email" id="form3Example1n1" class="form-control form-control-lg" name="mailid"/>
+                      <input type="email" id="form3Example1n1" class="form-control form-control-lg" name="mailid" required />
                       <label class="form-label" for="form3Example1n1">Mail id</label>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg" name="address" />
+                  <input type="text" id="form3Example8" class="form-control form-control-lg" name="address" required />
                   <label class="form-label" for="form3Example8">Address</label>
                 </div>
 
@@ -96,7 +96,7 @@ cursor:pointer;
 
                   <div class="form-check form-check-inline mb-0 me-4">
                     <input class="form-check-input" type="radio" name="gender" id="femaleGender"
-                      value="Female">
+                      value="Female" required>
                     <label class="form-check-label" for="femaleGender">Female</label>
                   </div>
 
@@ -114,7 +114,7 @@ cursor:pointer;
 
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" name="number" />
+                  <input type="text" id="form3Example97" class="form-control form-control-lg" name="number" required />
                   <label class="form-label" for="form3Example97">Phone Number</label>
                 </div>
 
@@ -122,108 +122,62 @@ cursor:pointer;
                   <div class="col-md-6 mb-4">
                     <label><h6>Department</h6></label><br>
                     <select class="select" name="department">
-                      <option name="department" value="Undergraduate">Undergraduate </option>
-                      <option name="department" value="Post Graduate">Post Graduate</option>
+                     <select class="select" name="department" required>
+                      <option name="department" >Computer Science </option>
+                      <option name="department" >Mathematics</option>
+                      <option name="department" >Chemistry</option>
+                      <option name="department" >Physics</option>
+                      <option name="department" >Commerce</option>
+                      <option name="department" >Biology</option>
+                    </select>
                     </select>
                     </div>
                       <div class="col-md-6 mb-4">
                         <div class="dropdown" name="courses">
-                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-bs-toggle="dropdown" aria-expanded="false" name="courses">
-                                  Course
-                         </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" name="courses">
-    <li><a class="dropdown-item" name="courses">Computer Science &raquo;</a>
-    <ul class="dropdown-menu dropdown-submenu">
-        <li>
-          <select class="select" name="courses">
-          <option name="courses" class="dropdown-item"> B.Sc CS</option>
-          <option name="courses" class="dropdown-item" >M.Sc CS specialized with AI</option>
-          <option name="courses" class="dropdown-item" >M.Sc CS specialized with Data Analytics</option>
-          <option name="courses" class="dropdown-item" >BCA</option>
-          <option name="courses" class="dropdown-item" >MCA</option>
-          <option name="courses" class="dropdown-item" >B.Sc Information Technology</option>
-          </select>
-        </li>
-    </ul>
-    </li>
-    <li>
-      <a class="dropdown-item" name="courses">Mathematics &raquo;</a>
-      <ul class="dropdown-menu dropdown-submenu">
-        <li>
-          <select class="select" name="courses">
-          <option name="courses" class="dropdown-item">B.A Mathematics</option>
-          <option name="courses" class="dropdown-item">B.Sc Mathematics</option>
-          <option name="courses" class="dropdown-item">M.Sc Applied Mathematics & Informatics</option>
-          <option name="courses" class="dropdown-item" >M.Sc Mathematics & Computing</option>
-          <option name="courses" class="dropdown-item" >B.Sc Mathematics(Computer Application)</option>
-          </select>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a  class="dropdown-item" name="courses">Chemistry &raquo;</a>
-      <ul class="dropdown-menu dropdown-submenu">
-        <li>
-          <select class="select" name="courses">
-          <option name="courses" class="dropdown-item" >B.Sc Chemistry</option>
-          <option name="courses" class="dropdown-item" >M.Sc Drug Chemistry</option>
-          <option name="courses" class="dropdown-item" >M.Sc Analytical Chemistry</option>
-          <option name="courses" class="dropdown-item" >M.Sc Chemistry</option>
-          <option name="courses" class="dropdown-item" >M.Sc Chemistry(Hons)</option>
-          </select>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a class="dropdown-item" name="courses">Physics &raquo;</a>
-      <ul class="dropdown-menu dropdown-submenu">
-        <li>
-          <select class="select" name="courses">
-          <option name="courses" class="dropdown-item" >B.Sc Physics</option>
-          <option name="courses" class="dropdown-item" >B.Sc Applied Physics</option>
-          <option name="courses" class="dropdown-item" >M.Sc Biophysics</option>
-          <option name="courses" class="dropdown-item" >M.Sc Physics</option>
-          <option name="courses" class="dropdown-item" >M.Sc Geophysics</option>
-          </select>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a class="dropdown-item" name="courses">Commerce &raquo;</a>
-      <ul class="dropdown-menu dropdown-submenu">
-        <li>
-          <select class="select" name="courses">
-          <option name="courses" class="dropdown-item" >BCom</option>
-          <option name="courses" class="dropdown-item" >BCom Finance & Accountancy</option>
-          <option name="courses" class="dropdown-item" >BBA</option>
-          <option name="courses" class="dropdown-item" >MCom </option>
-          <option name="courses" class="dropdown-item" >MBA</option>
-          </select>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a class="dropdown-item" name="courses">Biology &raquo;</a>
-      <ul class="dropdown-menu dropdown-submenu">
-        <li>
-          <select class="select" name="courses">
-          <option name="courses" class="dropdown-item" >B.Sc Biology</option>
-          <option name="courses" class="dropdown-item" >B.Sc Biotechnology</option>
-          <option name="courses" class="dropdown-item" >M.Sc Applied Biology</option>
-          <option name="courses" class="dropdown-item" >M.Sc Environmental Science</option>
-          <option name="courses" class="dropdown-item" >M.Sc Microbiology</option>
-          </select>
-        </li>
-      </ul>
-    </li>
-  </ul>
+                         <select class="select" name="courses" required>
+                      <option name="courses" class="dropdown-item"> B.Sc CS</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Information Technology</option>
+                       <option name="courses" class="dropdown-item" >BCA</option>
+                      <option name="courses" class="dropdown-item">B.A Mathematics</option>
+                      <option name="courses" class="dropdown-item">B.Sc Mathematics</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Maths and Computation</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Chemistry</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Physics</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Applied Physics</option>
+                      <option name="courses" class="dropdown-item" >BCom</option>
+                      <option name="courses" class="dropdown-item" >BCom Finance & Accountancy</option>
+                      <option name="courses" class="dropdown-item" >BBA</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Botany</option>
+                      <option name="courses" class="dropdown-item" >B.Sc Botany(Hons)</option>
+                       <option name="courses" class="dropdown-item" >B.Sc Biotechnology</option>
+                       <option name="courses" class="dropdown-item" >B.Sc Zoology</option>
+                      <option name="courses" class="dropdown-item" >M.Sc CS specialized with AI</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Data Science</option>
+                       <option name="courses" class="dropdown-item" >MCA</option>
+                      <option name="courses" class="dropdown-item">M.Sc Mathematical Finance</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Mathematics & Computing</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Drug Chemistry</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Analytical Chemistry</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Chemistry</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Chemistry(Hons)</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Biophysics</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Physics</option>
+                      <option name="courses" class="dropdown-item" >M.Sc Geophysics</option>
+                      <option name="courses" class="dropdown-item" >MCom </option>
+                      <option name="courses" class="dropdown-item" >MBA</option>
+                        <option name="courses" class="dropdown-item" >M.Sc Botany</option>
+                       <option name="courses" class="dropdown-item" >M.Sc Plant Breeding</option>
+                       <option name="courses" class="dropdown-item" >M.Sc Plant Science</option>
+                       <option name="courses" class="dropdown-item" >M.Sc Zoology</option>
+                       <option name="courses" class="dropdown-item" >M.Sc Entomology</option>
+                    </select>
+                         
 </div>
   </div>
       </div>          <br>
                 <div class="form-outline mb-4">
                  <label><h6>Purpose</h6></label><br>
-                    <select class="select" name="purpose">
+                    <select class="select" name="purpose" required>
                       <option name="purpose" value="Enquiry">Enquiry</option>
                       <option name="purpose" value="Place Order">Place Order</option>
                       <option name="purpose"  value="Return">Return</option>
