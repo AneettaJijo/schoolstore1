@@ -13,28 +13,76 @@ padding-right: .75em;
 .card-registration .select-arrow {
 top: 13px;
 }
-.dropdown-menu li {
-position: relative;
-}
-.dropdown-item{
-cursor:pointer;
-}
+        <script>
+var departmentObject = {
+  "Maths": {
+    "B.A Mathematics": [],
+    "B.Sc Mathematics": [],
+    "B.Sc Mathematics(Computer Application)": [],
+    "M.Sc Applied Mathematics & Informatics": [],
+    "M.Sc Mathematics & Computing": [],
+    "B.Sc Mathematics(Computer Application)": [],
 
-.dropdown-menu .dropdown-submenu {
-display: none;
-position: absolute;
-left: 50%;
-top: -7px;
+  },
+  "Chemistry": {
+    "B.Sc Chemistry": [],
+    "M.Sc Drug Chemistry": [],
+    "M.Sc Analytical Chemistry": [],
+    "M.Sc Chemistry": [],
+    "M.Sc Chemistry(Hons)": [],
+  },
+  "Computer Science": {
+    "B.Sc CS": [],
+    "BCA": [],
+    "MCA": [],
+    "B.Sc Information Technology": [],
+    "M.Sc CS specialized with AI": [],
+    "M.Sc CS specialized with Data Analytics": [],
+   },
+  "Physics": {
+    "B.Sc Physics": [],
+    "B.Sc Applied Physics": [],
+    "M.Sc Biophysics": [],
+    "M.Sc Physics": [],
+    "M.Sc Geophysics": [],
+   },
+   "Botany": {
+    "B.Sc Botany(Hons)": [],
+    "B.Sc Biotechnology": [],
+    "B.Sc Zoology": [],
+    "M.Sc Botany": [],
+    "M.Sc Plant Breeding": [],
+    "M.Sc Plant Science": [],
+    "M.Sc Zoology": [],
+    "M.Sc Entomology": [],
+   },
+   "Commerce": {
+     "BCom": [],
+     "BCom Finance & Accountancy": [],
+     "BBA": [],
+     "MCom": [],
+     "MBA": [],
+   },
 }
-.dropdown-menu .dropdown-submenu-left {
-right: 100%;
-left: auto;
+window.onload = function() {
+  var DepartmentSel = document.getElementById("department");
+  var courseSel = document.getElementById("course");
+
+  for (var x in departmentObject) {
+    DepartmentSel.options[DepartmentSel.options.length] = new Option(x, x);
+  }
+  DepartmentSel.onchange = function() {
+
+    courseSel.length = 1;
+
+    for (var y in departmentObject[this.value]) {
+      courseSel.options[courseSel.options.length] = new Option(y, y);
+    }
+  }
+
 }
-.dropdown-menu > li:hover > .dropdown-submenu {
-display: block;
-cursor:pointer;
-}
-  </style>
+</script>
+ </style>
 </head>
 <body>
 {% include 'messages.html' %}
@@ -121,56 +169,16 @@ cursor:pointer;
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <label><h6>Department</h6></label><br>
-                    <select class="select" name="department">
-                     <select class="select" name="department" required>
-                      <option name="department" >Computer Science </option>
-                      <option name="department" >Mathematics</option>
-                      <option name="department" >Chemistry</option>
-                      <option name="department" >Physics</option>
-                      <option name="department" >Commerce</option>
-                      <option name="department" >Biology</option>
-                    </select>
-                    </select>
+                     <select name="department" id="department" required>
+                         <option name="department" value="" selected="selected">Select department</option>
+                     </select>
                     </div>
                       <div class="col-md-6 mb-4">
                         <div class="dropdown" name="courses">
-                         <select class="select" name="courses" required>
-                      <option name="courses" class="dropdown-item"> B.Sc CS</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Information Technology</option>
-                       <option name="courses" class="dropdown-item" >BCA</option>
-                      <option name="courses" class="dropdown-item">B.A Mathematics</option>
-                      <option name="courses" class="dropdown-item">B.Sc Mathematics</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Maths and Computation</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Chemistry</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Physics</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Applied Physics</option>
-                      <option name="courses" class="dropdown-item" >BCom</option>
-                      <option name="courses" class="dropdown-item" >BCom Finance & Accountancy</option>
-                      <option name="courses" class="dropdown-item" >BBA</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Botany</option>
-                      <option name="courses" class="dropdown-item" >B.Sc Botany(Hons)</option>
-                       <option name="courses" class="dropdown-item" >B.Sc Biotechnology</option>
-                       <option name="courses" class="dropdown-item" >B.Sc Zoology</option>
-                      <option name="courses" class="dropdown-item" >M.Sc CS specialized with AI</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Data Science</option>
-                       <option name="courses" class="dropdown-item" >MCA</option>
-                      <option name="courses" class="dropdown-item">M.Sc Mathematical Finance</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Mathematics & Computing</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Drug Chemistry</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Analytical Chemistry</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Chemistry</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Chemistry(Hons)</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Biophysics</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Physics</option>
-                      <option name="courses" class="dropdown-item" >M.Sc Geophysics</option>
-                      <option name="courses" class="dropdown-item" >MCom </option>
-                      <option name="courses" class="dropdown-item" >MBA</option>
-                        <option name="courses" class="dropdown-item" >M.Sc Botany</option>
-                       <option name="courses" class="dropdown-item" >M.Sc Plant Breeding</option>
-                       <option name="courses" class="dropdown-item" >M.Sc Plant Science</option>
-                       <option name="courses" class="dropdown-item" >M.Sc Zoology</option>
-                       <option name="courses" class="dropdown-item" >M.Sc Entomology</option>
-                    </select>
+                           <label><h6>Course</h6></label><br>
+                             <select name="courses" id="course" required>
+                               <option name="courses" value="" selected="selected">Please select department first</option>
+                             </select> 
                          
 </div>
   </div>
