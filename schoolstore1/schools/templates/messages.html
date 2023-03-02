@@ -2,8 +2,8 @@
 <div class="container-fluid p-0">
   <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
     
-    {{ message }}
+    {{ message }}<br>
+      <a href="{% url 'stores:shop' %}">Home</a>
   </div>
-  <a href="{% url 'stores:shop' %}">Home</a>
 </div>
 {% endfor %}
